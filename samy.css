@@ -1,0 +1,488 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo-highlight {
+    color: #00d4d4;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #00d4d4;
+}
+
+/* Styles généraux */
+.highlight {
+    color: #00d4d4;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #00d4d4;
+}
+
+.section-title-white {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #00d4d4;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #00b8b8;
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+/* Section Hero */
+.hero {
+    background-color: #1f6ebd;
+    padding: 150px 0 100px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+.about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: auto; /* image poussée à droite */
+    display: block;
+    border: 6px solid #32dcdc; /* contour bleu ciel autour de la photo */
+}
+.titre-centre {
+    text-align: center;
+}
+.couleur-speciale {
+    color: #32dcdc; /* couleur bleu ciel */
+}
+/* Section Projets */
+.projets-section {
+    background-color: rgba(180, 188, 34, 0.724);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.projets-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #00bcd4; /* Couleur vive */
+}
+
+.projets-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projet-card {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 25px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.projet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.tags span {
+    display: inline-block;
+    background-color: #333;
+    color: #00bcd4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+
+.btn-voir { /* Style pour le bouton "Voir" */
+    display: block;
+    width: 100%;
+    background-color: #00bcd4; 
+    color: #1f1f1f;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-voir:hover {
+    background-color: #0097a7;
+}
+
+/* --- Styles pour la Modale du Jeu (Contient le Jeu Exécutable) --- */
+.modale-overlay {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modale-content {
+    background-color: #1f1f1f;
+    margin: 10% auto; 
+    padding: 30px;
+    border: 1px solid #00bcd4;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5); /* Effet lumineux */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#couleurs-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.couleur-carre {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 3px solid #f0f0f0;
+    transition: border-color 0.2s;
+}
+
+.couleur-carre:hover {
+    border-color: #00bcd4;
+}
+
+#message {
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/* Section Compétences */
+.competences-section {
+    /* Utilisation de la couleur de fond alternée */
+    background-color: #121212; 
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.competences-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #00bcd4; /* La couleur d'accentuation */
+}
+
+.competences-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills-group {
+    background-color: #1f1f1f; /* Fond des blocs de compétences */
+    border-radius: 10px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.skills-group h3 {
+    color: #f0f0f0;
+    font-size: 1.8em;
+    margin-top: 0;
+    border-bottom: 2px solid #00bcd4; /* Ligne sous le titre */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: #333;
+    color: #f0f0f0;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.skills-list li:hover {
+    background-color: #444;
+}
+
+/* Ajout d'une petite icône pour l'esthétique */
+.skills-list li::before {
+    content: "🛠️"; /* Icône pour Hard Skills */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Différencier l'icône pour les Soft Skills */
+.skills-group:last-child .skills-list li::before {
+    content: "🧠"; /* Icône pour Soft Skills */
+}
+/* Section Contact */
+.contact-section {
+    padding: 60px 20px 0; /* Pas de padding en bas car le footer suit */
+    text-align: center;
+    background-color: #e40a61;
+    color: #f0f0f0;
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #e80fe8;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-section h2 {
+    color: #f0f0f0;
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.contact-section p {
+    color: #00bcd4;
+    margin-bottom: 30px;
+}
+
+/* Formulaire */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les groupes d'input */
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-group {
+    flex: 1; /* Permet aux inputs Prénom et Nom de partager la largeur */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group.full-width {
+    flex: none;
+    width: 100%;
+}
+
+.input-group label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #00bcd4;
+}
+
+.contact-form input[type="text"], 
+.contact-form textarea {
+    background-color: #2a2a2a; /* Fond des champs plus clair */
+    border: 1px solid #444;
+    padding: 12px;
+    color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    width: 100%; /* S'assure que les champs remplissent leur groupe */
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.btn-envoyer {
+    background-color: #00bcd4; /* La couleur vive du bouton "Envoyer" */
+    color: #121212;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.btn-envoyer:hover {
+    background-color: #0097a7;
+}
+
+/* Footer (Pied de Page) */
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    color: #aaa;
+    font-size: 0.9em;
+}
+.footer p {
+    margin: 5px 0;
+}
+.main-header {
+    display: flex; /* Active Flexbox */
+    /* Pousse l'élément de gauche à gauche et l'élément de droite à droite,
+       en maximisant l'espace entre eux. */
+    justify-content: space-between; 
+    
+    /* Centre les éléments verticalement (le texte sera aligné même si la nav a des marges différentes) */
+    align-items: center; 
+    
+    padding: 20px 50px; /* Espace autour du header */
+    background-color: #121212; /* Assure le fond sombre */
+    color: #f0f0f0;
+}
+
+/* Styles pour le nom à gauche */
+.header-left h1 {
+    font-size: 1.5em;
+    color: #00bcd4; /* Couleur d'accentuation */
+    margin: 0;
+}
+
+/* Styles pour les liens à droite */
+.header-right a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 25px; /* Espace entre les liens de navigation */
+    transition: color 0.2s;
+}
+
+.header-right a:hover {
+    color: #00bcd4;
+}
